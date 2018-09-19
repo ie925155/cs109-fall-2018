@@ -1,0 +1,96 @@
+<head>
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Pset 5: The Penultimate. 
+					</h1>
+					<p class="subtleHeading"><span class="sidebaricon glyphicon glyphicon-calendar" aria-hidden="true"></span>Due: Friday, Nov 26th, 10:30A.M.
+				</p>
+
+				</div>
+				<hr/>
+
+				<center>
+				<img style="width:50%" src="{{pathToRoot}}img/psets/pset5.png">	
+				<p style="text-align:center"><i>Warmups, probabilistic program analysis, peer grading, a/b testing, and (for the first time ever) an explanation of the beta-exam phenomena</i>
+			</center>
+			</div>
+		</div>
+
+
+		
+		
+				
+		<div class="row">
+			<div class="col-sm-12">
+				
+
+				
+				<h2>Resources</h2>
+				<hr/>
+				<p>
+					<div class="row">
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset5.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:20px">PSet</p></a>
+						</div>
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset5.zip"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:13px">Datasets</p></a>
+						</div>
+
+						
+
+						
+					</div>
+					<br/>
+				</p>
+
+				<h2>Errata</h2>
+					<hr/>
+				<p>
+					<div class="alert alert-info"><b>Note:</b> The bounds have been updated for question 14 (the lower bound is now inclusive and the upper bound is exclusive)</div>
+				</p>
+
+				<p>
+					
+					 
+					
+					</ul>
+				</p>
+
+			</div>
+		</div>
+
+
+	
+
+		%include templates/parts/footer.html
+
+	</div>
+
+	<script type="text/javascript">
+		$( ".moment" ).each(function( i ) {
+			var date = $(this).html()
+
+			var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+			$(this).html(fromStr)
+		  });
+		//alert(moment("20160101", "YYYYMMDD").fromNow())
+	</script>
+
+</body>

@@ -1,0 +1,74 @@
+<!--
+    Template that renders a single cell for a single lecture day.  Assumes a
+    "day" parameter with fields specified in the project README.
+    -->
+% if "type" in data:
+<td class="calendarCell" style="background-color:aliceblue">
+% else:
+<td class="calendarCell">
+% end
+
+    <div style="position:relative">
+        <div class="inOut">
+            % if "notes1" in data:
+                {{data["notes1"]}}
+            % end
+            <br>
+            % if "notes2" in data:
+                {{data["notes2"]}}
+            % end
+        </div>
+
+        <div class="classLinks">
+            <!-- slides -->
+            <!-- If there are slides, show them -->
+            % slides = data["slides"] if "slides" in data else None
+            % if slides != None:
+                <a href="{{pathToRoot}}{{data['slides']}}">
+                <span class="sidebaricon glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span> Slides
+                </a> 
+                (<a href="{{pathToRoot}}{{data['pdf']}}">pdf</a>)
+                <br/>
+            % else:
+                <br/>
+            % end
+
+            
+            <!-- lecture notes -->
+            <!-- If there are lecture notes, show them -->
+            % lectureNotes = data["lectureNotes"] if "lectureNotes" in data else None
+            % if lectureNotes != None:
+                <a href="{{pathToRoot}}{{data['lectureNotes']}}">
+                <span class="sidebaricon glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span> Lecture Notes
+                </a> 
+                <br/>
+            % end
+
+            <!-- extra -->
+            <!-- If there is an extra link, show it -->
+            % extra = data["extra"] if "extra" in data else None
+            % if extra != None:
+                <a href="{{pathToRoot}}{{data['extra']['link']}}">
+                <span class="sidebaricon glyphicon glyphicon-apple" aria-hidden="true" title="pdf"></span> {{data['extra']['text']}}
+                </a> 
+            % end
+        </div>
+
+        <p class="subtleHeading calendarDate">{{data["date"]}}</p>
+
+        <!-- If there is a lecture number and title, show it -->
+        % if "lectureNumber" in data:
+            {{data["lectureNumber"]}}: {{data["name"]}}
+        % else:
+            {{data["name"]}}
+        % end
+
+        <!-- If there is no class, show that -->
+        % if "noClass" in data:
+            <br/>No class
+        % end
+
+
+       
+    </div>
+</td>

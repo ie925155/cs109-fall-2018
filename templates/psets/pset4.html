@@ -1,0 +1,90 @@
+<head>
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Pset 4: Joint Variables
+					</h1>
+					<p class="subtleHeading"><span class="sidebaricon glyphicon glyphicon-calendar" aria-hidden="true"></span>Due: Wednesday, Nov 8th, 3:00P.M.
+				</p>
+
+				</div>
+				<hr/>
+
+				<center>
+				<img style="width:80%" src="{{pathToRoot}}img/psets/pset4b.jpg">	
+				<p style="text-align:center"><i>Warmups, deeper questions, biometric keystrokes and titanic probabilities</i>
+			</center>
+			</div>
+		</div>
+
+
+		
+		
+				
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					The midterm is on Thursday, Nov 2nd, which is before the date when this problem set is due. The problems in this pset are great review! 
+					
+				</p>
+
+				<!--
+				Problem set #2 is out! A few of the problems require you to process data. The <a href="{{pathToRoot}}psets/pset2.zip"><span class="sidebaricon glyphicon glyphicon-list-alt" aria-hidden="true"></span> datasets are now availible</a>.
+			-->
+
+				
+				<h2>Resources</h2>
+				<hr/>
+				<p>
+					<div class="row">
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset4.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:20px">PSet</p></a>
+						</div>
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset4.zip"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:13px">Datasets</p></a>
+						</div>
+
+						
+					</div>
+					<br/>
+				</p>
+
+				
+
+			</div>
+		</div>
+
+
+	
+
+		%include templates/parts/footer.html
+
+	</div>
+
+	<script type="text/javascript">
+		$( ".moment" ).each(function( i ) {
+			var date = $(this).html()
+
+			var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+			$(this).html(fromStr)
+		  });
+		//alert(moment("20160101", "YYYYMMDD").fromNow())
+	</script>
+
+</body>
