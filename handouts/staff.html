@@ -37,8 +37,29 @@
 <script src="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/plugins/math.min.js"></script>
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
+	<script src="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/plugins/swal.min.js"></script>
+
 </head>
 <body>
+
+	<script>
+		showLocation = function() {
+			swal({
+			  title: 'Office Hour Location',
+			  text: 'Do you want to continue',
+			  type: 'info',
+			  confirmButtonText: 'Cool',
+			  width: '600px',
+			  html: `<p style="font-size:16px">
+	      	All office hours (except Chris') are going to be held in the basement of Huang in the work area infront of the Heroes' Wall. 
+	      </p>
+	      <p>
+	      	<img style="max-width:500px"src ="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/img/people/officeHourHuang.jpg"></img>
+	      </p>`,
+
+			})
+		}
+	</script>
 
 	<!-- Navigation Bar -->
 <nav class="navbar navbar-inverse">
@@ -122,7 +143,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sections<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a>None yet</a></li>
+            <li><a href="https://goo.gl/forms/JntAP56m9xFXcIfx1">Section signup</a></li>
             <!--<li><a href="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/sections/section1.pdf">Section 1</a></li>
             <li><a href="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/sections/section2.pdf">Section 2</a></li>
             <li><a href="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/sections/section3.pdf">Section 3</a></li>
@@ -206,28 +227,14 @@
 		<div class="row">
 	      <div class="col-sm-12">
 
-	      	<div class="alert alert-info">
-	      		<b>Heads up!</b> Office hours will start on Thursday, Sept 27th.
-	      	</div>
-
+	      	<p>
+	      	<button type="button" class="btn btn-default" onclick="showLocation()"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Where are office hours?</button>
+	      </p>
 	      	
-	      	<!--<iframe src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=vdlr9q2h4u9mqdn23kttcuec30%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+	      	<iframe src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=vdlr9q2h4u9mqdn23kttcuec30%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 	      	
 
 	      	<hr/>
-
-
-
-	      	<h2>Office Hour Location</h2>
-	      	<p>
-	      	All office hours (except Chris') are going to be held in the basement of Huang in the work area infront of the Heroes' Wall. Some office hours are also online. Online office hours will be hosted in Huang and we encourage on campus students to go visit them -- in addition to being in person there will also be a link (see Piazza) that allows SCPD students to ask questions.
-	      </p>
-	      <p>
-	      	<img style="width:80%"src ="//web.stanford.edu/class/archive/cs/cs109/cs109.1192/img/people/officeHourHuang.jpg"></img>
-	      </p>
-	      	
-	      
-	      	<hr/>-->
 
 	      	<div class="row">
 		      <div class="col-sm-12">
