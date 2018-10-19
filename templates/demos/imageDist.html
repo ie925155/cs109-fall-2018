@@ -94,6 +94,9 @@
 
 			var LOGO_SIZE = 900;
 			var DARTS = 500000;
+			var TIMEOUT_START = 50;
+			var TIMEOUT_END = 1;
+			var TIMEOUT_SWITCH = 50000;
 
 			var xDist = gaussian(LOGO_SIZE/2, stdToVar(LOGO_SIZE/2));
 			var yDist = gaussian(LOGO_SIZE/3, stdToVar(LOGO_SIZE/5));
@@ -165,7 +168,11 @@
 					    	ctx.putImageData(imageData, 0, 0);
 					    	dartsThrown += delta;
 					    	$("#dartNum").html(dartsThrown);
-					    	setTimeout(throwDart, 1);
+					    	var timeout = TIMEOUT_START
+					    	if(dartsThrown > TIMEOUT_SWITCH) {
+					    		timeout = TIMEOUT_END
+					    	}
+					    	setTimeout(throwDart, timeout);
 					    }
 				    }
 				    throwDart();
