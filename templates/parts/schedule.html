@@ -419,8 +419,18 @@
 <td class="calendarWeekCell">10</td>
 <%
   data = {
-    "lectureNumber" : 25,
+    "lectureNumber" : 24,
     "date" : "Nov 26th",
+    "name" : "Naive Bayes",
+    "lectureNotes": "lectureNotes/24 - NaiveBayes.pdf",
+    "slides": "lectures/24 - NaiveBayes.pdf",
+    "notes2" : "Read: Lecture handout"
+  }
+  include('templates/parts/scheduleDay.html', data=data)
+
+  data = {
+    "lectureNumber" : 25,
+    "date" : "Nov 28th",
     "name" : "Logistic Regression",
     "notes2" : "Read: Lecture handout"
   }
@@ -428,16 +438,8 @@
 
   data = {
     "lectureNumber" : 26,
-    "date" : "Nov 28th",
-    "name" : "Deep Learning I",
-    "notes2" : "Read: Lecture handout"
-  }
-  include('templates/parts/scheduleDay.html', data=data)
-
-  data = {
-    "lectureNumber" : 27,
     "date" : "Nov 30th",
-    "name" : "Deep Learning II",
+    "name" : "Deep Learning",
     "notes2" : "Read: Lecture handout"
   }
   include('templates/parts/scheduleDay.html', data=data)
@@ -449,16 +451,16 @@
 <td class="calendarWeekCell">11</td>
 <%
   data = {
-    "lectureNumber" : 28,
+    "lectureNumber" : 27,
     "date" : "Dec 3rd",
-    "name" : "Overview I",
+    "name" : "CS109 Overview",
   }
   include('templates/parts/scheduleDay.html', data=data)
 
   data = {
     "lectureNumber" : 29,
     "date" : "Dec 5th",
-    "name" : "Overview II",
+    "name" : "Review",
   }
   include('templates/parts/scheduleDay.html', data=data)
 
