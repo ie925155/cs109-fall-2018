@@ -1,5 +1,275 @@
 <head>
 
+	<script type="text/javascript" src="../plugins/d3.v3/d3.v3.min.js"></script>	
+	<!-- Stylesheet -->	
+	
+	<style type="text/css">
+
+		path.arc {
+		  fill: #fff;
+		}
+
+		.node circle {
+		  fill: #fff;
+		  stroke: steelblue;
+		  stroke-width: 1.5px;
+		  
+		}
+
+		.node {
+		  font-size: 12.3px;
+		  font-weight: bold;
+		}
+
+		#conceptGraph .link {
+		  fill: none;
+		  stroke: #ccc;
+		  stroke-width: 2px;
+		}
+
+		    </style>
+			
+			<style>
+				
+				
+				/* override style stuff */
+		#header {
+		  position: relative;
+		  margin: 10px 0;
+		  padding-top: 0;
+		}
+		#header img {
+		  right: 0;
+		}
+		#menu-primary {
+		  width: auto;
+		  margin: 0;
+		  position: absolute;
+		  top: 50%;
+		  margin-top: -10px;
+		  right: 0;
+		}
+		#footer-content {
+		  width: 100%;
+		}
+		#footer .copyright {
+		  float: right;
+		}
+
+		/* hacky custom sidebar */
+		#con-sidebar {
+		  width: 34%;
+		  margin-left: 3%;
+		  float: left;
+		  margin-top: 58px;
+		}
+		.concept-thumb {
+		  display: block;
+		  width: 250px;
+		  height: 250px;
+		  margin-bottom: 88px;
+		}
+		a.concept-thumb:hover {
+		  border: none;
+		}
+
+		/* standard */
+		a.btn {
+		  background-color: #0da4d3;
+		  color: #fff !important;
+		  font-weight: bold;
+		  text-transform: uppercase;
+		  padding: 4px 10px;
+		  border-radius: 5px;
+		  cursor: pointer;
+		}
+		a.btn:hover, a.btn.active {
+		  color: #fff;
+		  background-color: #000;
+		  border: none;
+		}
+
+		/* hide comments */
+		#hidden-comments {
+		  display: none;
+		}
+		#show-comments {
+		  margin: 20px 0;
+		}
+
+		/* episode carousel */
+		#episode-container {
+		  position: relative;
+		  width: 750px;
+		  height: 500px;
+		  margin: 20px auto;
+		  /* vertical space = (total height - episode height - height of bottom thing) / 2 */
+		  padding-top: 65px;
+		}
+
+		#episodes {
+		  margin: 0;
+		  height: 180px;
+		}
+		#episodes li {
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		  display: none;
+		}
+		#episodes li.first {
+		  display: block;
+		}
+		#episodes li > a {
+		  position: relative;
+		  display: block;
+		  width: 750px;
+		}
+		#episodes li > a:hover {
+		  border: 0;
+		}
+		#episodes h2 {
+		  text-transform: uppercase;
+		  position: absolute;
+		  right: 0;
+		  top: 250px;
+		  background-color: #fff;
+		  padding: 10px 30px;
+		}
+		#episodes li > a h2, #episodes li > a .date {
+		  -webkit-transition: all 0.5s ease;
+		  -moz-transition: all 0.5s ease;
+		  -o-transition: all 0.5s ease;
+		  transition: all 0.5s ease;
+		}
+		#episodes li > a:hover h2, #episodes li > a:hover .date {
+		  background-color: #000;
+		  color: #fff;
+		}
+		#episodes .date {
+		  position: absolute;
+		  right: 0;
+		  top: 300px;
+		  color: #999;
+		  background-color: #fff;
+		  padding: 5px 30px 5px 10px;
+		}
+		#episodes p {
+		  margin-top: 20px;
+		  width: 500px;
+		}
+		#transport {
+		  position: absolute;
+		  top: 410px; /* 350 + top pad of container */
+		  width: 750px;
+		}
+		#transport a {
+		  position: absolute;
+		  height: 30px;
+		  width: 30px;
+		  line-height: 30px;
+		  text-align: center;
+		  display: block;
+		  background-color: rgba(0,0,0,.5);
+		  color: #fff;
+		  z-index: 99;
+		}
+		#next-episode {
+		  right: 0;
+		}
+		#transport a:hover {
+		  border: 0;
+		  background-color: #000;
+		}
+
+		#episode-thumbs {
+		  position: absolute;
+		  top: 0;
+		  background-color: #fff;
+		  margin: 0;
+		  width: 750px;
+		  z-index: 100;
+		}
+		#episode-thumbs li {
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		  display: inline-block;
+		}
+		#episode-thumbs li a {
+		  display: block;
+		  border: 6px solid #fff;
+		}
+		#episode-thumbs li a:hover {
+		  border-color: #0da4d3;
+		}
+
+		#controls {
+		  margin-top: 20px;
+		  width: 750px;
+		}
+		#controls .btn {
+		  position: relative;
+		  float: right;
+		  margin-left: 10px;
+		  z-index: 99;
+		}
+
+		/* map */
+		svg {
+		  font-family: Abel,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		  font-size: 15px;
+		}
+		.episode > rect {
+		  stroke: #fff;
+		  stroke-width: 1.5px;
+		}
+		path {
+		  fill: none;
+		}
+		.episode, .node, .detail text, .all-episodes {
+		  cursor: pointer;
+		}
+		.all-episodes {
+		  fill: #aaa;
+		}
+		.detail a text:hover, text.all-episodes:hover {
+		  text-decoration: underline;
+		}
+		#graph-info {
+		  position: absolute;
+		  width: 140px;
+		  right: 0;
+		  bottom: 0;
+		  padding-bottom: 10px;
+		}
+
+		/* references */
+		#references h3 {
+		  color: #999;
+		}
+		em.ref {
+		  color: #999;
+		  margin-left: 10px;
+		}
+		.ref-episode a, .ref-episode a:visited {
+		  white-space: nowrap;
+		  color: #999;
+		}
+
+		/* map */
+		#map .leaflet-popup-content a {
+		  display: block;
+		  margin-top: 10px;
+		  border-bottom: 1px solid transparent;
+		}
+		#map .leaflet-popup-content a:hover {
+		  color: #000;
+		  border-bottom-color: #0da4d3;
+		}
+
+	</style>
+
 <title>CS109</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,13 +306,6 @@
 
 <script src="//web.stanford.edu/class/cs109/plugins/math.min.js"></script>
 <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-	<script type="text/x-mathjax-config">
-	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-	</script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.1.0/math.min.js"></script>
-	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-
-	
 
 </head>
 <body>
@@ -226,202 +489,48 @@
 			<div class="col-sm-12">
 				<div id="pageHeader">
 					<h1>
-						Machine Learning Datasets
+						Big Picture
 					</h1>
-					<p class="subtleHeading">
-						May 19th, 2016
-					</p>
-					<hr/>
 				</div>
-				
+				<hr/>
+
 				<p>
-					<div class="alert alert-info"><b>Update (May/19): </b>We fixed the number of features in the Ancestry dataset.</div>
+					A retrospective of where we've been and what we've learned this quarter in CS 109.
 				</p>
-				<p>
-					<center><img src="//web.stanford.edu/class/cs109/img/ml/datasets.png" style="max-width:70%"></img><br/><br/>
-						<i>Figure: You will program classifiers for heart disease, predicting ancestry and predicting movie taste.</i></center><br/>
-				</p>
-				
-				
-				<hr/>
+
+				<div id="abilities">
+					<hr/>
+					<h2>Explanation</h2>
+					<p>I find it useful to think of a class in terms of the things I should be able to <b>do</b> after finishing. In general, what I expect you to know (really get) are the abilities we covered in the problem sets and on the midterm.</p> 
+						
+					<p>This is how the diagram works: see that large column in the middle? Those are the most important abilities we hope you have a grasp of after CS 109. 
+					The nodes to the left are (a subset of) the course topics. 
+					The nodes to the right are some key homework and midterm problems.
+					</p>
+					<div id="plotDiv">
+					</div>
+					<br /><br />
+					<div>
+						<div id="graph"></div>
+						<div id="graph-info"></div>
+						<script src="http://www.findtheconversation.com/wp-content/themes/conversation_theme/d3.v3.min.js"></script>
+						<script src="data/concepts.js"></script>
+					</div>
+				</div>
+
+				<div id="concepts">
+					<hr/>
+					<h2>Concept Hierarchy</h2>
+					<p>Another way to understand what we covered in CS 109 is through the more traditional concept hierarchy. During class I tried to augment your education with peripheral topics and gems of information. This list is not complete.</p>
+					<div id="hierarchyDiv">
+					</div>
+					<br /><br/>
+					<div id="conceptGraph" style="margin-left:85px">
+						<script src="bigPicture/tree.js"></script>
+					</div>
+				</div>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-sm-2">
-				<p>
-					<a href="//web.stanford.edu/class/cs109/stuff/datasets.zip">ML Datasets<br/><span class="glyphicon glyphicon-save-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span>
-					</a>
-				</p>	
-			</div>
-			<div class="col-sm-10">
-				
-
-				<p>This page describes in slightly more detail the datasets for the machine learning programming part of the ultimate CS109 assignment. Each dataset is formatted in exactly the same way. See the <a href="//web.stanford.edu/class/cs109/pdfs/38 ProblemSet6.pdf">problem set handout</a> for more details on formatting. You don't need to know the details of the features or the prediction task to complete pset6. This information is provided simply to give you a deeper understanding of the tasks you are working on.
-		</p>
-
-			</div>
-			
-			<div class="col-sm-12">
-				<hr/>
-			</div>
-		</div>
-		
-
-		<div class="row">
-			<div class="col-sm-12">
-				<h2> Heart Dataset </h2>
-				
-				<p>
-				<h3>Task:</h3>
-Your task is to assist a doctor in predicting whether or not a patient has heart disease (specifically myocardial perfusion diagnosis). Your prediction will be based on partial diagnosis made on images of different parts of the heart.
-</p>
-
-<p>
-<h3>Values:</h3>
-A heart is scanned and pictures of 2D images are generated for five different parts of the heart:
-Area A: Near the heart's apex (4 ROIs)
-Area B: In middle of the "LV" (5 ROIs)
-Area C: Near the heart base (5 ROIs)
-Area D: In the center of the LV cavity for horizontal long axis view (4 ROIs)
-Area E: In the center of the LV cavity for vertical long axis view (4 ROIs)
-There are 4 or 5 regions of interest (ROIs) in each image.
-A cardiologist makes a partial diagnoses for each of the 22 Regions of Interest (ROIs). These partial diagnosis were mechanical to generate and could be performed by a trained nurse. 0 is a negative diagnosis (healthy), 1 is a positive diagnosis (unhealthy).  Each column represents a partial diagnosis by a cardiologist for a particular ROI. Here is a picture of the 22 ROIs:
-</p>
-<p>
-<center>
-<img src="//web.stanford.edu/class/cs109/img/ml/heartROI.png" style="max-width:70%"></img>
-</center>
-</p>
-
-<p>
-<h3>Prediction:</h3>
-The variable you are predicting is the overall diagnosis of heart disease. The labels were generated by a team of cardiologists based on detailed analysis of each case.
-</p>
-<p>
-This dataset was collected by Kurgan et al and is hosted by the UCI Machine Learning Repository:<br/>
-<a href="http://archive.ics.uci.edu/ml/datasets/SPECT+Heart">http://archive.ics.uci.edu/ml/datasets/SPECT+Heart</a>
-</p>
-
-<hr/>
-
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-sm-12">
-				<h2> Ancestry Dataset </h2>
-				
-				<p>
-				<h3>Task:</h3>
-Your task is to predict the ethnicity of a person who has sent in their DNA based on <a href="https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism">Single Nucleotide Polymorphisms (SNPs)</a>.
-</p>
-
-<p>
-<h3>Values:</h3>
-This dataset contains the genetic variation found in people sampled by the <a href="http://www.1000genomes.org/">1000 Genomes Project</a> which sequenced the DNA from different ethnic groups around the world. Each input vector represents the DNA at specific locations in the genome for one individual. There are 20 binary input features. 0 indicates that the user's DNA at the given location matches the human reference genome. 1 indicates that the user's DNA does not match the human reference genome. The output class value represents the super population (ethnicity) of each individual. The super populations contained in this dataset are East Asian or Ad Mixed American, encoded in binary. The training data set contains 283 data vectors, and the testing data set contains 184 data vectors.
-
-Each feature represents a particular location in the human genome. 0 indicates that the user's DNA at the given location matches the human reference genome. 1 indicates that the user's DNA does not match the human reference genome. Though the particular locations in DNA may have semantic meanings -- for this task all you know is that each column is a distinct nucleotide index.
-</p>
-
-<p>
-<h3>Prediction:</h3>
-The variable you are predicting is the super population of the user.
-</p>
-
-<p>
-Thanks to Jim Notwell and <a href = "http://bejerano.stanford.edu/pi.html">Gill Bejerano</a> from the Stanford Computer Science and Genetics departments for this dataset.
-</p> 
-<hr/>
-			</div>
-		</div>
-				
-		
-		<div class="row">
-			<div class="col-sm-12">
-				<h2> Netflix Dataset </h2>
-<p>
-				<h3>Task:</h3>
-Your task is to predict if a user would like Miss Congeniality based on their ratings for the 30 most rated movies. This data is from real users on Netflix.
-</p>
-<p>
-<h3>Values:</h3>
-Each row in the train and test set represents one user. Each column represents one movie. All users in the dataset rated all movies in the dataset. Each entry in this dataset is binary. A value of 1 indicates a rating of 4 or 5 (they liked the movie). A value of 0 indicates a rating of 1, 2 or 3 (didn't really like it). 
-
-
-Each feature represents ratings for a particular movie.
-<style>
-li.list-group-item {
-  text-align: center !important;
-  min-height:100px;
-  margin-bottom: 5px;
-}
-</style>
-
-<div class="row" >
-	<div class="col-sm-3">
-		<ul class="list-group">
-		<li class="list-group-item">1, Independence Day (1996)</li>
-		<li class="list-group-item">2, The Patriot (2000)</li>
-		<li class="list-group-item">3, The Day After Tomorrow (2004)</li>
-		<li class="list-group-item">4, Pirates of the Caribbean: The Curse of the Black Pearl (2003)</li>
-		<li class="list-group-item">5, Pretty Woman (1990)</li>
-		<li class="list-group-item">6, Forrest Gump (1994)</li>
-		<li class="list-group-item">7, The Green Mile (1999)</li>
-		<li class="list-group-item">8, Con Air (1997)</li>
-		</ul>
-	</div>
-	<div class="col-sm-3">
-		<ul class="list-group">
-		<li class="list-group-item">9, Twister (1996)</li>
-		<li class="list-group-item">10, Sweet Home Alabama (2002)</li>
-		<li class="list-group-item">11, Pearl Harbor (2001)</li>
-		<li class="list-group-item">12, Armageddon (1998)</li>
-		<li class="list-group-item">13, The Rock (1996)</li>
-		<li class="list-group-item">14, What Women Want (2000)</li>
-		<li class="list-group-item">15, Bruce Almighty (2003)</li>
-		<li class="list-group-item">16, Ocean's Eleven (2001)</li>
-		</ul>
-	</div>
-	<div class="col-sm-3">
-		<ul class="list-group">
-		<li class="list-group-item">17, The Bourne Identity (2002)</li>
-		<li class="list-group-item">18, The Italian Job (2003)</li>
-		<li class="list-group-item">19, I Robot (2004)</li>
-		<li class="list-group-item">20, American Beauty (1999)</li>
-		<li class="list-group-item">21, How to Lose a Guy in 10 Days (2003)</li>
-		<li class="list-group-item">22, Lethal Weapon 4 (1998)</li>
-		<li class="list-group-item">23, Shrek 2 (2004)</li>
-		</ul>
-	</div>
-	<div class="col-sm-3">
-		<ul class="list-group">
-		<li class="list-group-item">24, Lost in Translation (2003)</li>
-		<li class="list-group-item">25, Top Gun (1986)</li>
-		<li class="list-group-item">26, Pulp Fiction (1994)</li>
-		<li class="list-group-item">27, Gone in 60 Seconds (2000)</li>
-		<li class="list-group-item">28, The Sixth Sense (1999)</li>
-		<li class="list-group-item">29, Lord of the Rings: The Two Towers (2002)</li>
-		<li class="list-group-item">30, Men of Honor (2000)</li>
-		</ul>
-	</div>
-</div>
-</p>
-
-<p>
-<h3>Prediction:</h3>
-The variable you are predicting is the binary value for the user's rating of Miss Congeniality (2000).
-</p>
-
-<p>
-Credit:
-This dataset was curated by Chris Piech, but it is based on data originally made for the "Netflix Prize". The Netflix Prize data was initially retracted because of concerns over user privacy. Reed Hastings, the CEO of Netflix, gave the official thumbs up for CS109 to release this anonymized subset of data. Thanks to Matt Chen for his help in getting the Netflix Prize data.
-</p>
-				<hr/>
-			</div>
-		</div>
-
-	
 
 
 
@@ -451,7 +560,5 @@ This dataset was curated by Chris Piech, but it is based on data originally made
 </script>
 
 	</div>
-
-	
 
 </body>
