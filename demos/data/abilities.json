@@ -1,0 +1,215 @@
+{
+	"episodes": [
+		{
+			"type": "episode",
+			"name": "Quantify sample & event spaces",
+			"description": "",
+			"links": ["Deterministic Search", "Scripto Continua", "Seam Carving", "Earnest Spelling", "Sending Bit Strings"]
+		}, {
+			"type": "episode",
+			"name": "Choose a random variable",
+			"description": "",
+			"links": ["Deterministic Search", "Heuristics", "Scripto Continua", "Seam Carving"]
+		}, {
+			"type": "episode",
+			"name": "Prove independence",
+			"description": "",
+			"links": ["Probability Axioms", "Conditional Probability", "Multivariate Models", "Ebola Bats"]
+		}, {
+			"type": "episode",
+			"name": "Model a MDP",
+			"description": "",
+			"links": ["MDP", "Autonomous TA", "Markov Assumption", "Pacman"]
+		}, {
+			"type": "episode",
+			"name": "Estimate parameters from data",
+			"description": "",
+			"links": ["Parameter Estimation", "Classifier Algorithms", "Deep Learning", "Beta"]
+		}, {
+			"type": "episode",
+			"name": "Choose an approximation",
+			"description": "",
+			"links": ["Deterministic Search", "MDP", "Adversarial Search", "Pacman"]
+		}, {
+			"type": "episode",
+			"name": "Calculate an expectation",
+			"description": "",
+			"links": ["Expectation of Recursive Functions", "Expectation and Variance of RVs", "St. Petersburg ($2^n)"]
+		}, {
+			"type": "episode",
+			"name": "Compare relative likelihoods",
+			"description": "",
+			"links": ["Probability Axioms", "Let's Make a Deal (Monty Hall)"]
+		}, {
+			"type": "episode",
+			"name": "Model CSPs",
+			"description": "",
+			"links": ["CSP", "Earnest Spelling"]
+		}, {
+			"type": "episode",
+			"name": "Design Bayes Nets",
+			"description": "",
+			"links": ["Bayes Net", "Conditional Prob.", "Cancer Warnings", "Predicting Regrades"]
+		}, {
+			"type": "episode",
+			"name": "Bayes Net Exact Inference",
+			"description": "",
+			"links": ["Bayes Net", "Marginalization", "Conditional Prob.", "Cancer Warnings", "Driverless Car", "Tree Augmented Naive Bayes", "Predicting Emotion", "Predicting Regrades"]
+		},{
+			"type": "episode",
+			"name": "Eval. Gaussian Probabilities",
+			"description": "",
+			"links": ["Conditional Prob.", "Driverless Car", "Gaussian Variables"]
+		}, {
+			"type": "episode",
+			"name": "Note Cond. Independence",
+			"description": "",
+			"links": ["Bayes Net", "Conditional Prob.", "Cancer Warnings", "Tree Augmented Naive Bayes"]
+		}, {
+			"type": "episode",
+			"name": "Design Markov Models",
+			"description": "",
+			"links": ["Bayes Net", "Markov Models", "Hidden Markov Models", "Markov Assumption", "Jazz Improvisation", "Predicting Emotion"]
+		}, {
+			"type": "episode",
+			"name": "Filtering for HMMs",
+			"description": "",
+			"links": ["Bayes Net", "Markov Models", "Hidden Markov Models", "Markov Assumption", "Jazz Improvisation", "Driverless Car"]
+		}, {
+			"type": "episode",
+			"name": "Write K-Means",
+			"description": "",
+			"links": ["Visual Cortex", "Rotten Tomatoes", "Expectation Maximization", "Unsupervised Learning"]
+		}, {
+			"type": "episode",
+			"name": "Select Features for ML",
+			"description": "",
+			"links": ["Visual Cortex", "Autism", "Feature Learning", "Unsupervised Learning", "Supervised Learning"]
+		}, {
+			"type": "episode",
+			"name": "Write Linear Classifier",
+			"description": "",
+			"links": ["Visual Cortex", "Brain Interface", "Gradient Descent", "Supervised Learning"]
+		}, {
+			"type": "episode",
+			"name": "Scientific ML Experiments",
+			"description": "",
+			"links": ["Visual Cortex", "Autism", "Supervised Learning", "Unsupervised Learning"]
+		}, {
+			"type": "episode",
+			"name": "Learn Features",
+			"description": "",
+			"links": ["Visual Cortex", "Feature Learning", "Unsupervised Learning", "Supervised Learning"]
+		}
+	],
+	"themes": [
+		{
+			"type": "theme",
+			"name": "Counting",
+			"description": ""
+		}, {
+			"type": "theme",
+			"name": "Probability Axioms",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Conditional Probability",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Independence",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Bayes' Rule",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "RV Mass and Density Functions",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Discrete Parametric Distributions",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Continuous Parametric Distributions",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Expectation and Variance of RVs",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Multivariate Distributions",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Beta",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Expectation of Recursive Functions",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Approximations",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Sampling and CLT",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Bootstrapping",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "General Inference",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Parameter Estimation",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Classifier Algorithms",
+			"description": ""
+		},{
+			"type": "theme",
+			"name": "Deep Learning",
+			"description": ""
+		}
+	],
+	"perspectives": [
+		{
+			"type": "perspective",
+			"name": "Sending Bit Strings",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Let's Make a Deal (Monty Hall)",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "2-Dimensional Tracking",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Ebola Bats",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "St. Petersburg ($2^n)",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Thompson Sampling",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Netflix and Learn",
+			"description": ""
+		}
+	]
+}
