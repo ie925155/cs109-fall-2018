@@ -19,7 +19,7 @@
 			"type": "episode",
 			"name": "Use RV PDF & CDF",
 			"description": "",
-			"links": ["RV Mass and Density Functions", "Discrete Parametric Distributions", "Continuous Parametric Distributions", "Bit Strings in Space", "2-Dimensional Tracking", "Bitcoin Mining", "Email Author"]
+			"links": ["RV Mass and Density Functions", "Discrete Parametric Distributions", "Continuous Parametric Distributions", "Bit Strings in Space", "2-Dimensional Tracking", "Thompson Sampling", "Bitcoin Mining", "Email Author"]
 		}, {
 			"type": "episode",
 			"name": "Estimate parameters from data",
@@ -59,12 +59,12 @@
 			"type": "episode",
 			"name": "Perform General Inference",
 			"description": "",
-			"links": ["Probability of Flu (pset 5)", "General Inference", "Sampling and CLT"]
+			"links": ["Probability of Flu", "General Inference", "Sampling and CLT"]
 		}, {
 			"type": "episode",
 			"name": "Calculate Sample Statistics",
 			"description": "",
-			"links": ["Peer Grading", "Sampling and CLT", "Expectation and Variance of RVs"]
+			"links": ["Peer Grading", "Sampling and CLT", "Expectation and Variance of RVs", "Thompson Sampling"]
 		}, {
 			"type": "episode",
 			"name": "Use Bootstrapping",
