@@ -107,7 +107,7 @@
 		  					"name": "Normal Approximation"
 		  				},
 		  				{
-		  					"name": "xx"
+		  					"name": "Projection to Std Normal"
 		  				}
 		  			]
 		  		},
@@ -115,10 +115,10 @@
             "name":"Beta",
             "children": [
               {
-                "name": "z"
+                "name": "Adjusting Parameters"
               },
               {
-                "name": "yy"
+                "name": "Beta as a Prior"
               }
             ]
           }
@@ -146,27 +146,56 @@
   {
   	"name": "Sampling",
   	"children": [
+			{
+  			"name":"Mean & Variance"
+  		},
   		{
-  			"name":"Supervised",
-  			"children": [
-  				{
-		  			"name":"Nearest Neighbors"
-		  		},
-		  		{
-		  			"name":"Linear Regression"
-		  		},
-	  			{
-		  			"name":"SVMs"
-		  		},
-		  		{
-		  			"name":"Logistic Regression"
-		  		},
-		  		{
-		  			"name":"Naive Bayes"
-		  		}
-  			]
+  			"name":"Std Error"
+  		},
+			{
+  			"name":"Bootstrapping"
+  		},
+  		{
+  			"name":"Central Limit Theorem"
+  		},
+  		{
+  			"name":"General Inference"
   		}
   	]
+  },
+  {
+    "name": "Deep Learning",
+    "children": [
+      {
+        "name":"Parameter Estimation",
+        "children": [
+          {
+            "name":"MLE"
+          },
+          {
+            "name":"MAP"
+          },
+          {
+            "name":"Laplace"
+          },
+          {
+            "name":"Gradient Ascent"
+          }
+        ]
+      },{
+        "name":"Classifiers",
+        "children": [
+          {
+            "name":"Naive Bayes"
+          },
+          {
+            "name":"Logistic Regression"
+          }
+        ]
+      },{
+        "name":"Neural Nets"
+      }
+    ]
   }
  ]
 }

@@ -4,102 +4,82 @@
 			"type": "episode",
 			"name": "Quantify sample & event spaces",
 			"description": "",
-			"links": ["Deterministic Search", "Scripto Continua", "Seam Carving", "Earnest Spelling", "Sending Bit Strings"]
+			"links": ["Counting Bit Strings", "Hitting a Target", "Running Into Friends", "Counting", "Probability Axioms"]
 		}, {
 			"type": "episode",
 			"name": "Choose a random variable",
 			"description": "",
-			"links": ["Deterministic Search", "Heuristics", "Scripto Continua", "Seam Carving"]
+			"links": ["Bit Strings in Space", "Discrete Parametric Distributions", "Continuous Parametric Distributions", "Multivariate Distributions", "Beta"]
 		}, {
 			"type": "episode",
 			"name": "Prove independence",
 			"description": "",
-			"links": ["Probability Axioms", "Conditional Probability", "Multivariate Models", "Ebola Bats"]
+			"links": ["Probability Axioms", "Independence", "Conditional Probability", "Multivariate Models", "Ebola Bats", "Email Author"]
 		}, {
 			"type": "episode",
-			"name": "Model a MDP",
+			"name": "Use RV PDF & CDF",
 			"description": "",
-			"links": ["MDP", "Autonomous TA", "Markov Assumption", "Pacman"]
+			"links": ["RV Mass and Density Functions", "Discrete Parametric Distributions", "Continuous Parametric Distributions", "Bit Strings in Space", "2-Dimensional Tracking", "Bitcoin Mining", "Email Author"]
 		}, {
 			"type": "episode",
 			"name": "Estimate parameters from data",
 			"description": "",
-			"links": ["Parameter Estimation", "Classifier Algorithms", "Deep Learning", "Beta"]
+			"links": ["Parameter Estimation", "Classifier Algorithms", "Deep Learning", "Beta", "Netflix and Learn"]
 		}, {
 			"type": "episode",
 			"name": "Choose an approximation",
 			"description": "",
-			"links": ["Deterministic Search", "MDP", "Adversarial Search", "Pacman"]
+			"links": ["Approximations"]
 		}, {
 			"type": "episode",
 			"name": "Calculate an expectation",
 			"description": "",
-			"links": ["Expectation of Recursive Functions", "Expectation and Variance of RVs", "St. Petersburg ($2^n)"]
+			"links": ["Expectation of Recursive Functions", "Expectation and Variance of RVs", "St. Petersburg ($2^n)", "Dithering", "Peer Grading"]
 		}, {
 			"type": "episode",
 			"name": "Compare relative likelihoods",
 			"description": "",
-			"links": ["Probability Axioms", "Let's Make a Deal (Monty Hall)"]
+			"links": ["Probability Axioms", "Sampling and CLT", "Let's Make a Deal (Monty Hall)", "Dithering"]
 		}, {
 			"type": "episode",
-			"name": "Model CSPs",
+			"name": "Use Bayes' Theorem",
 			"description": "",
-			"links": ["CSP", "Earnest Spelling"]
-		}, {
-			"type": "episode",
-			"name": "Design Bayes Nets",
-			"description": "",
-			"links": ["Bayes Net", "Conditional Prob.", "Cancer Warnings", "Predicting Regrades"]
-		}, {
-			"type": "episode",
-			"name": "Bayes Net Exact Inference",
-			"description": "",
-			"links": ["Bayes Net", "Marginalization", "Conditional Prob.", "Cancer Warnings", "Driverless Car", "Tree Augmented Naive Bayes", "Predicting Emotion", "Predicting Regrades"]
+			"links": ["Bayes' Rule", "Zika Test", "2-Dimensional Tracking", "Email Author", "Netflix and Learn"]
 		},{
 			"type": "episode",
-			"name": "Eval. Gaussian Probabilities",
+			"name": "Use Standard Normal",
 			"description": "",
-			"links": ["Conditional Prob.", "Driverless Car", "Gaussian Variables"]
+			"links": ["Continuous Parametric Distributions", "Expectation and Variance of RVs", "Approximations", "Sampling and CLT"]
 		}, {
 			"type": "episode",
-			"name": "Note Cond. Independence",
+			"name": "Show Cond. Independence",
 			"description": "",
-			"links": ["Bayes Net", "Conditional Prob.", "Cancer Warnings", "Tree Augmented Naive Bayes"]
+			"links": ["Dithering", "Ebola Bats", "Independence", "Multivariate Distributions"]
 		}, {
 			"type": "episode",
-			"name": "Design Markov Models",
+			"name": "Perform General Inference",
 			"description": "",
-			"links": ["Bayes Net", "Markov Models", "Hidden Markov Models", "Markov Assumption", "Jazz Improvisation", "Predicting Emotion"]
+			"links": ["Probability of Flu (pset 5)", "General Inference", "Sampling and CLT"]
 		}, {
 			"type": "episode",
-			"name": "Filtering for HMMs",
+			"name": "Calculate Sample Statistics",
 			"description": "",
-			"links": ["Bayes Net", "Markov Models", "Hidden Markov Models", "Markov Assumption", "Jazz Improvisation", "Driverless Car"]
+			"links": ["Peer Grading", "Sampling and CLT", "Expectation and Variance of RVs"]
 		}, {
 			"type": "episode",
-			"name": "Write K-Means",
+			"name": "Use Bootstrapping",
 			"description": "",
-			"links": ["Visual Cortex", "Rotten Tomatoes", "Expectation Maximization", "Unsupervised Learning"]
+			"links": ["Peer Grading", "Sampling and CLT", "Expectation and Variance of RVs", "Bootstrapping"]
 		}, {
 			"type": "episode",
-			"name": "Select Features for ML",
+			"name": "Perform Gradient Ascent",
 			"description": "",
-			"links": ["Visual Cortex", "Autism", "Feature Learning", "Unsupervised Learning", "Supervised Learning"]
+			"links": ["Netflix and Learn", "Parameter Estimation", "Deep Learning", "Classifier Algorithms"]
 		}, {
 			"type": "episode",
-			"name": "Write Linear Classifier",
+			"name": "Classify Data",
 			"description": "",
-			"links": ["Visual Cortex", "Brain Interface", "Gradient Descent", "Supervised Learning"]
-		}, {
-			"type": "episode",
-			"name": "Scientific ML Experiments",
-			"description": "",
-			"links": ["Visual Cortex", "Autism", "Supervised Learning", "Unsupervised Learning"]
-		}, {
-			"type": "episode",
-			"name": "Learn Features",
-			"description": "",
-			"links": ["Visual Cortex", "Feature Learning", "Unsupervised Learning", "Supervised Learning"]
+			"links": ["Netflix and Learn", "Parameter Estimation", "Deep Learning", "Classifier Algorithms"]
 		}
 	],
 	"themes": [
@@ -184,11 +164,23 @@
 	"perspectives": [
 		{
 			"type": "perspective",
-			"name": "Sending Bit Strings",
+			"name": "Hitting a Target",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Counting Bit Strings",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Running Into Friends",
 			"description": ""
 		},{
 			"type": "perspective",
 			"name": "Let's Make a Deal (Monty Hall)",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Zika Test",
 			"description": ""
 		},{
 			"type": "perspective",
@@ -204,7 +196,31 @@
 			"description": ""
 		},{
 			"type": "perspective",
+			"name": "Bit Strings in Space",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Dithering",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Bitcoin Mining",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Email Author",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Peer Grading",
+			"description": ""
+		},{
+			"type": "perspective",
 			"name": "Thompson Sampling",
+			"description": ""
+		},{
+			"type": "perspective",
+			"name": "Probability of Flu",
 			"description": ""
 		},{
 			"type": "perspective",
